@@ -1,0 +1,117 @@
+CSS reset (light) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Theme tokens */
+:root {
+  --bg: #0f1220;
+  --surface: #171a2a;
+  --text: #e9ecf1;
+  --muted: #9aa3b2;
+  --accent: #5b8cff;
+  --accent-contrast: #0b1a3a;
+}
+
+/* 3. Base typography */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px circle at 20% 10%, #141833 0%, var(--bg) 60%);
+  line-height: 1.6;
+}
+
+/* 4. Layout */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* 5. Header and nav */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid #23263a;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-right: 0.75rem;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+}
+
+/* 6. Buttons */
+button {
+  appearance: none;
+  border: 1px solid #2a2e44;
+  background: linear-gradient(180deg, #20243a 0%, #181b2f 100%);
+  color: var(--text);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(91, 140, 255, 0.2);
+  border-color: var(--accent);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* 7. Footer */
+.site-footer {
+  border-top: 1px solid #23263a;
+  color: var(--muted);
+  padding: 1rem;
+  text-align: center;
+}
+
+
+
+script.js
+// Minimal JS starter
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('actionBtn');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    // Simple demo interaction
+    alert('Button clicked!');
+    // Example: toggle accent class
+    btn.classList.toggle('is-active');
+  });
+});
+
+
+
+Optional: folder structure
+- index.html
+- styles.css
+- script.js
+- assets/
+- favicon.ico (optional)
+If you’d like this as a downloadable starter or want a TypeScript/Vite variant, tell me your preference and I’ll tailor it.
